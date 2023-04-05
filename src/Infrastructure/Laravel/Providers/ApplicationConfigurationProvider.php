@@ -8,7 +8,7 @@ use Src\Infrastructure\Laravel\Facades\Configuration;
 class ApplicationConfigurationProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Load initialize env variable to configuration
      */
     public function register(): void
     {

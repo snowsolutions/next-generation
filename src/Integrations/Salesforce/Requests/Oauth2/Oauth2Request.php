@@ -15,18 +15,12 @@ class Oauth2Request implements RequestContract
         protected $method = 'GET'
     ) {
         $this->requestUrl = config('salesforce.auth_url').'/services/oauth2/token';
-        $this->setAuthorizationHeader();
         $this->setContentTypeHeader();
     }
 
     public function setRequestUrl($url)
     {
         $this->requestUrl = $url;
-    }
-
-    public function setAuthorizationHeader($header = null)
-    {
-//        $this->headers['Authorization'] = $header ?: 'Bearer ' . config('salesforce.access_token');
     }
 
     public function setContentTypeHeader($header = null)

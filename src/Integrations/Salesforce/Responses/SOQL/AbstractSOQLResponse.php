@@ -18,26 +18,41 @@ abstract class AbstractSOQLResponse extends AbstractResponse
         self::RESPONSE_PROPERTY_RECORDS,
     ];
 
+    /**
+     * @return mixed
+     */
     public function getTotalSize()
     {
         return $this->{self::RESPONSE_PROPERTY_TOTAL_SIZE};
     }
 
+    /**
+     * @return mixed
+     */
     public function getDone()
     {
         return $this->{self::RESPONSE_PROPERTY_DONE};
     }
 
+    /**
+     * @return mixed
+     */
     public function getRecords()
     {
         return $this->{self::RESPONSE_PROPERTY_RECORDS};
     }
 
+    /**
+     * @return mixed|string
+     */
     public function getMessage()
     {
         return $this->message;
     }
 
+    /**
+     * @return mixed|string
+     */
     public function getErrorCode()
     {
         return $this->errorCode;

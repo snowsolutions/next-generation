@@ -26,11 +26,17 @@ abstract class AbstractCompositeResponse extends AbstractResponse
         parent::__construct($rawResponse);
     }
 
+    /**
+     * @return mixed|string
+     */
     public function getMessage()
     {
         return $this->message;
     }
 
+    /**
+     * @return mixed|string
+     */
     public function getErrorCode()
     {
         return $this->errorCode;

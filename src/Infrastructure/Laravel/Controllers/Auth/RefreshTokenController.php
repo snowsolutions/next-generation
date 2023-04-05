@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Src\Infrastructure\Laravel\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,6 +15,8 @@ class RefreshTokenController extends Controller
     }
 
     /**
+     * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws Oauth2APIException
      */
     public function __invoke(Request $request)

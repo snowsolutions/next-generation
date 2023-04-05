@@ -17,7 +17,9 @@ use Src\Integrations\Salesforce\Requests\SOQL\QueryRequest;
 use Src\Integrations\Salesforce\Responses\Composite\LeadCompositeResponse;
 use Src\Integrations\Salesforce\Responses\SOQL\LeadSOQLResponse;
 
-//Adapter
+/**
+ * Adapter / Concrete implementation
+ */
 class SalesforceLeadRepository implements LeadRepositoryContract
 {
     public function __construct(
@@ -42,6 +44,9 @@ class SalesforceLeadRepository implements LeadRepositoryContract
         );
     }
 
+    /**
+     * @throws \Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException
+     */
     public function findAll(): Collection
     {
         $request = new QueryRequest('SELECT Id,FirstName,LastName,Email,Company,Phone FROM Lead');
@@ -59,6 +64,9 @@ class SalesforceLeadRepository implements LeadRepositoryContract
         }, $response->getRecords()));
     }
 
+    /**
+     * @throws \Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException
+     */
     public function findTenFirst(): Collection
     {
         $request = new QueryRequest('SELECT Id,FirstName,LastName,Email,Company,Phone FROM Lead LIMIT 10');

@@ -14,6 +14,9 @@ class RefreshAccessTokenResponse extends Oauth2Response
         'issued_at',
     ];
 
+    /**
+     * @return mixed
+     */
     public function getAccessToken()
     {
         return $this->access_token;

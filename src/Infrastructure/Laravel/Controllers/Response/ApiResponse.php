@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Infrastructure\Laravel\Controller\Response;
+namespace Src\Infrastructure\Laravel\Controllers\Response;
 
 class ApiResponse
 {

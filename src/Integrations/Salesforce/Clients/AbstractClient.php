@@ -22,22 +22,25 @@ abstract class AbstractClient
         $requestUrl = $request->getRequestUrl();
         $cURLConnection = curl_init();
 
-//        dd($headers, $params, $method, $requestUrl);
-
         curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
         /**
-         * Parse headers
+         * Parse & set headers
          */
         $parsedHeaders = [];
         foreach ($headers as $headerKey => $headerValue) {
             $parsedHeaders[] = "$headerKey: $headerValue";
         }
-
         curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, $parsedHeaders);
 
+        /**
+         * Set request method
+         */
         curl_setopt($cURLConnection, CURLOPT_CUSTOMREQUEST, $method);
 
+        /**
+         * Build payload
+         */
         switch ($request->getMethod()) {
             case 'GET':
             case 'DELETE':
@@ -69,10 +72,20 @@ abstract class AbstractClient
 
                 break;
         }
+
+        /**
+         * Set request URL
+         */
         curl_setopt($cURLConnection, CURLOPT_URL, $requestUrl);
 
+        /**
+         * Execute request
+         */
         $rawResponse = curl_exec($cURLConnection);
 
+        /**
+         * Close request
+         */
         curl_close($cURLConnection);
 
         return $rawResponse;

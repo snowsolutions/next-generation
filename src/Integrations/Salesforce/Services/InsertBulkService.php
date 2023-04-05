@@ -10,6 +10,12 @@ class InsertBulkService implements CampaignInsertBulkServiceContract
 {
     public function __invoke(Request $request)
     {
+        /**
+         * Store the file to public path
+         */
+        if (! file_exists(public_path('uploads/campaign/csv'))) {
+            mkdir(public_path('uploads/campaign/csv'), 0777, true);
+        }
         $file = $request->file('upload_csv');
         $uploadFileName = time().'_Batch_Campaign_'.$file->getFilename().'.'.$file->extension();
         $file->move(public_path('uploads/campaign/csv'), $uploadFileName);

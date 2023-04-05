@@ -15,7 +15,9 @@ use Src\Integrations\Salesforce\Requests\SOQL\QueryRequest;
 use Src\Integrations\Salesforce\Responses\Composite\CampaignCompositeResponse;
 use Src\Integrations\Salesforce\Responses\SOQL\CampaignSOQLResponse;
 
-//Adapter
+/**
+ * Adapter / Concrete implementation
+ */
 class SalesforceCampaignRepository implements CampaignRepositoryContract
 {
     public function __construct(
@@ -38,9 +40,12 @@ class SalesforceCampaignRepository implements CampaignRepositoryContract
         );
     }
 
+    /**
+     * @throws \Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException
+     */
     public function findAll(): Collection
     {
-        $request = new QueryRequest('SELECT Id,Name,StartDate,EndDate,CreatedDate FROM Campaign');
+        $request = new QueryRequest('SELECT Id,Name,StartDate,EndDate,CreatedDate FROM Campaign ORDER BY CreatedDate DESC');
         $response = new CampaignSOQLResponse($this->queryClient->call($request));
 
         return collect(array_map(function ($item) {
@@ -53,6 +58,9 @@ class SalesforceCampaignRepository implements CampaignRepositoryContract
         }, $response->getRecords()));
     }
 
+    /**
+     * @throws \Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException
+     */
     public function findTenFirst(): Collection
     {
         $request = new QueryRequest('SELECT Id,Name,StartDate,EndDate,CreatedDate FROM Campaign ORDER BY CreatedDate DESC LIMIT 10');

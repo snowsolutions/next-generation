@@ -14,7 +14,9 @@ use Src\Integrations\Salesforce\Requests\SOQL\QueryRequest;
 use Src\Integrations\Salesforce\Responses\Composite\AccountCompositeResponse;
 use Src\Integrations\Salesforce\Responses\SOQL\AccountSOQLResponse;
 
-//Adapter
+/**
+ * Adapter / Concrete implementation
+ */
 class SalesforceAccountRepository implements AccountRepositoryContract
 {
     public function __construct(
@@ -36,6 +38,9 @@ class SalesforceAccountRepository implements AccountRepositoryContract
         );
     }
 
+    /**
+     * @throws \Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException
+     */
     public function findAll(): Collection
     {
         $request = new QueryRequest('SELECT Id,Name,Phone,CreatedDate FROM Account');
@@ -50,6 +55,9 @@ class SalesforceAccountRepository implements AccountRepositoryContract
         }, $response->getRecords()));
     }
 
+    /**
+     * @throws \Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException
+     */
     public function findTenFirst(): Collection
     {
         $request = new QueryRequest('SELECT Id,Name,Phone,CreatedDate FROM Account ORDER BY CreatedDate LIMIT 10');

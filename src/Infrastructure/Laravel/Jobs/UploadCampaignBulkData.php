@@ -23,9 +23,6 @@ class UploadCampaignBulkData implements ShouldQueue
     ) {
     }
 
-    /**
-     * Execute the job.
-     */
     public function handle(
         BulkClient $client
     ): void {
