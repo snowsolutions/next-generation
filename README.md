@@ -1,66 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Salesforce Mini App
 
-## About Laravel
+Technical assignment to demonstrate the integration with Salesforce Platform via APIs
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🔗 Demo
+You can try the demo application with the link below
+[![portfolio](https://cdn-icons-png.flaticon.com/128/6051/6051251.png)](https://next-gen.phucnguyen68.com/)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[Demo Application](https://next-gen.phucnguyen68.com/)
+## System Requirements
 
-## Learning Laravel
+Webserver Apache or Nginx or simply use built-in PHP server (artisan serve)
+- PHP 8.1+
+- MySQL 5.7+
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## API Document
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+You can use the provided Postman Collection to import into your `Postman` app
+```
+./docs/postman/next-generation-salesforce-api.json
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Environment Variables
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+To run this project, you will need to add the following environment variables to your .env file
 
-### Premium Partners
+`DB_DATABASE` = `{your database name}`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+`DB_USERNAME` = `{your database user}`
 
-## Contributing
+`DB_PASSWORD` = `{your database password}`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+`QUEUE_CONNECTION` = `database`
 
-## Code of Conduct
+`SALESFORCE_CLIENT_ID` = `{your client id}`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+`SALESFORCE_CLIENT_SECRET` = `{your client secret}`
 
-## Security Vulnerabilities
+`SALESFORCE_ACCESS_TOKEN` = `{your access token}`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+`SALESFORCE_REFRESH_TOKEN` = `{your refresh token}`
 
-## License
+`SALESFORCE_INSTANCE_URL` = `{your Salesforce instance url}`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`SALESFORCE_AUTH_URL` = `https://login.salesforce.com`
+
+## Installation
+
+Clone the project
+
+```bash
+  git clone https://github.com/snowsolutions/next-generation.git
+```
+
+Go to the project directory
+
+```bash
+  cd next-generation
+```
+
+Install composer dependencies
+
+```bash
+  composer install
+```
+
+Run the migration
+
+```bash
+  php artisan migrate
+```
+
+Install node dependencies
+
+```bash
+  npm install
+```
+Build assets with Vite
+
+```bash
+  npm run build
+```
+Run the application with virtual host setup or built-in php server via `artisan` command
+
+```bash
+  php artisan serve
+```
+## Tests
+
+The tests have to wait a bit...
+
+```bash
+```
+
+## 🚀 About Me
+Phuc Nguyen - A fullstack software engineer who sometime make simple things complicated in a beautiful approach
+
