@@ -23,6 +23,22 @@ You can use the provided Postman Collection to import into your `Postman` app
 ```
 
 
+## Architecture
+
+### Entities
+The `Entities` is the protagonist in Hexagonal architecture, or somewhere they reference it as the `Application`. We use the pluralized term `Entities` or `Entity` in this project to build all business logic around the `Entity`.This section present for all business logic implemented across the application.
+
+The `Application` code will interact with the `Infrastructures` through `Interactors`, `Contracts` and `Repositories`. We can safely assume that `Contracts` and `Repositories` are `Ports` and `Adapters` in Hexagonal architecture.
+
+### Infrastructures
+
+The `Infrastructure` section present for technologies that implemented across the application, which is the `Laravel` framework in this case. The section contains anything that coupled to the infrastructure and separated from the application code.
+
+### Integrations
+The `Integrations` section present for third parties that integrated across the application, which is the `Salesforce` platform in this case. The section contains all required classes to create the integration between the application and Salesforce like: API Clients, Request Objects, Response Objects, Services, Exceptions
+
+
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -98,3 +114,5 @@ The tests have to wait a bit...
 ## 🚀 About Me
 Phuc Nguyen - A fullstack software engineer who sometime make simple things complicated in a beautiful approach
 
+## Acknowledgements
+- [Hexagonal Architecture by Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
