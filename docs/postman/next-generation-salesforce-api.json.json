@@ -1,0 +1,629 @@
+{
+	"info": {
+		"_postman_id": "3b1134b3-a650-4d99-b73b-90bee9614a4c",
+		"name": "Salesforce (Next Generation Assignment)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "969936"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Get Access Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth-Request-Type",
+								"value": "Named-User",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic cGh1Y0BzZWxmZW1wbG95ZWQuY29tOkF3ZHghMDE0NjY0ODU=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "{{salesforce_username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{salesforce_password}}{{security_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/services/oauth2/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"services",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Composite APIs",
+			"item": [
+				{
+					"name": "Campaign",
+					"item": [
+						{
+							"name": "Create a campaign",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Pardot-Business-Unit-Id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"My Campaign Z\",\r\n    \"StartDate\": \"2023-04-01\",\r\n    \"EndDate\": \"2023-04-10\",\r\n    \"IsActive\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{instance_url}}/services/data/v57.0/sobjects/Campaign",
+									"host": [
+										"{{instance_url}}"
+									],
+									"path": [
+										"services",
+										"data",
+										"v57.0",
+										"sobjects",
+										"Campaign"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update campaign",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Pardot-Business-Unit-Id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"National Sale\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{instance_url}}/services/data/v57.0/sobjects/Campaign/7012w000000UtJvAAK",
+									"host": [
+										"{{instance_url}}"
+									],
+									"path": [
+										"services",
+										"data",
+										"v57.0",
+										"sobjects",
+										"Campaign",
+										"7012w000000UtJvAAK"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Lead",
+					"item": [
+						{
+							"name": "Create a lead",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LastName\": \"Le Hoang Minh Test\",\r\n    \"Title\" : \"Product Lead\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{instance_url}}/services/data/v{{api_version}}/sobjects/Lead",
+									"host": [
+										"{{instance_url}}"
+									],
+									"path": [
+										"services",
+										"data",
+										"v{{api_version}}",
+										"sobjects",
+										"Lead"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a lead",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{instance_url}}/services/data/v{{api_version}}/sobjects/Lead/00Q2w00000UCwBjEAL",
+									"host": [
+										"{{instance_url}}"
+									],
+									"path": [
+										"services",
+										"data",
+										"v{{api_version}}",
+										"sobjects",
+										"Lead",
+										"00Q2w00000UCwBjEAL"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{access_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Bulk API V2",
+			"item": [
+				{
+					"name": "Create Job Ingest",
+					"protocolProfileBehavior": {
+						"followAuthorizationHeader": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"object\": \"Campaign\",\r\n    \"operation\": \"insert\",\r\n    \"lineEnding\": \"CRLF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/jobs/ingest",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"jobs",
+								"ingest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Job Data",
+					"protocolProfileBehavior": {
+						"followAuthorizationHeader": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/csv",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Name,StartDate,EndDate,IsActive\r\nNew Year 2023,2023-01-01,2023-01-31,true\r\nApril Fool 2023,2023-04-01,2023-04-02,true\r\nSummer Sale 1,2023-06-01,2023-06-15,true\r\nSummer Sale 2,2023-07-01,2023-07-15,true\r\nSummer Sale 3,2023-08-01,2023-08-15,true\r\nChristmas 2023,2023-12-20,2023-12-31,true",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/jobs/ingest/7502w00000PYox2AAD/batches",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"jobs",
+								"ingest",
+								"7502w00000PYox2AAD",
+								"batches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close / Abort Job",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"state\":\"UploadComplete\"\n}"
+						},
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/jobs/ingest/7502w00000PYox2AAD",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"jobs",
+								"ingest",
+								"7502w00000PYox2AAD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/jobs/ingest/7502w00000PYox2AAD",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"jobs",
+								"ingest",
+								"7502w00000PYox2AAD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Job Query",
+					"protocolProfileBehavior": {
+						"followAuthorizationHeader": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"operation\": \"query\",\r\n  \"query\": \"SELECT name FROM Campaign\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/jobs/query",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"jobs",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Query Job Result",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/jobs/query/7502w00000PYpaNAAT/results",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"jobs",
+								"query",
+								"7502w00000PYpaNAAT",
+								"results"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SOQL",
+			"item": [
+				{
+					"name": "List 10 Accounts order by Created Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/query?q=SELECT+Name,CreatedDate+FROM+Account+ORDER+BY+CreatedDate+LIMIT+10",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"query"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "SELECT+Name,CreatedDate+FROM+Account+ORDER+BY+CreatedDate+LIMIT+10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account-Contacts Relationship Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{instance_url}}/services/data/v{{api_version}}/query?q=SELECT+Name,+(SELECT+PHONE+FROM Contacts)+FROM+Account",
+							"host": [
+								"{{instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v{{api_version}}",
+								"query"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "SELECT+Name,+(SELECT+PHONE+FROM Contacts)+FROM+Account"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "{{url}}/services/oauth2/authorize",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "implicit",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "api",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "access_token",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "instance_url",
+			"value": "https://self-employed-e3-dev-ed.develop.my.salesforce.com",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "00D2w00000RsQeF!ARYAQKMG7fNNmEg_yhgn3ITgK2NW1QCOHMZGo2WJ.8fbjgxRgM0GsKt6bO79roT2y8AMzOPy75lCOmI7gPoQgAItYTUtSam1",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "3MVG9n_HvETGhr3DXJ0NgQRxTrVpWcYD9Rjjx.smZylk3jh8Em8Y_Dwf6KSCFl_LTOpF4gZcpCHAnlCXX.5MP",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "31A10FCE1FA5075E3A9321762312093B73784E0E76EFA826ACF6AFB48B0E73D2",
+			"type": "string"
+		},
+		{
+			"key": "security_token",
+			"value": "E4LHcDl5QHbrci085vUYcOlz",
+			"type": "string"
+		},
+		{
+			"key": "salesforce_password",
+			"value": "Awdx!01466485",
+			"type": "string"
+		},
+		{
+			"key": "salesforce_username",
+			"value": "phuc@selfemployed.com",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://login.salesforce.com",
+			"type": "string"
+		},
+		{
+			"key": "api_version",
+			"value": "57.0",
+			"type": "string"
+		}
+	]
+}

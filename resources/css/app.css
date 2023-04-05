@@ -1,0 +1,74 @@
+.sf-table {
+
+}
+
+.sf-table tr {
+    border: 1px solid black;
+}
+
+.record-field {
+
+}
+
+.record-field:hover {
+    cursor: pointer;
+    background-color: #d0d0d0;
+}
+
+.record-field.readonly .cell-form-inline {
+    display: none;
+}
+.record-field:not(.readonly) .mask {
+    display: none;
+}
+.cell-form-inline {
+    position: relative;
+}
+.cell-form-inline .form-control {
+    display: inline-flex;
+    width: 100%;
+}
+.record-field-upgrade {
+    position: absolute;
+    top: 3px;
+    margin-left: 5px;
+    right: 5px;
+    height: 30px;
+    font-size: 14px;
+    padding: 5px 7px;
+}
+
+.top-navigation {
+    width: 100%;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #d7d7d7;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.navigation-item {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #7296c9;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.navigation-item:hover {
+    cursor: pointer;
+    background-color: #4381d2;
+    transition: background-color 0.2s;
+}
+
+.navigation-item.active {
+    background-color: #1974e8;
+}
+
+.navigation-item-content {
+    display: inline-block;
+    color: white;
+}
+.record-field .form-control.error {
+    border: 2px solid red;
+}
