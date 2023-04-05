@@ -25,6 +25,8 @@ You can use the provided Postman Collection to import into your `Postman` app
 
 ## Architecture
 
+This project will be decorated in the `\src`. I tend to leave the `\app` as default.
+
 ### Entities
 The `Entities` is the protagonist in Hexagonal architecture, or somewhere they reference it as the `Application`. We use the pluralized term `Entities` or `Entity` in this project to build all business logic around the `Entity`.This section present for all business logic implemented across the application.
 
