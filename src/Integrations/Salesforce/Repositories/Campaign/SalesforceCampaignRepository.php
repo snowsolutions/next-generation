@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Entities\Campaign\Domains\Repositories;
+namespace Src\Integrations\Salesforce\Repositories\Campaign;
 
 use Illuminate\Support\Collection;
 use Src\Entities\Campaign\Domains\Campaign;

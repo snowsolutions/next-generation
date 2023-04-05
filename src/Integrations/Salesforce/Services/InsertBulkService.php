@@ -1,11 +1,12 @@
 <?php
 
-namespace Src\Entities\Campaign\Domains\Services;
+namespace Src\Integrations\Salesforce\Services;
 
 use Illuminate\Http\Request;
+use Src\Entities\Campaign\Domains\Contracts\CampaignInsertBulkServiceContract;
 use Src\Infrastructure\Laravel\Jobs\UploadCampaignBulkData;
 
-class InsertBulkService
+class InsertBulkService implements CampaignInsertBulkServiceContract
 {
     public function __invoke(Request $request)
     {

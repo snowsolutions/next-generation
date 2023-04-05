@@ -3,13 +3,16 @@
 namespace Src\Entities\Account\Interactors;
 
 use Illuminate\Http\Request;
-use Src\Entities\Account\Domains\Repositories\SalesforceAccountRepository;
+use Src\Entities\Account\Domains\Contracts\AccountRepositoryContract;
 use Src\Infrastructure\Laravel\Controller\Response\ApiResponse;
 
+/**
+ * Use case
+ */
 class UpdateInteractor
 {
     public function __construct(
-        private readonly SalesforceAccountRepository $salesforceAccountRepository
+        private readonly AccountRepositoryContract $accountRepositoryContract
     ) {
     }
 
@@ -18,7 +21,7 @@ class UpdateInteractor
         $id = $request->get('id');
         $dataToUpdate = $request->get('data');
         try {
-            $this->salesforceAccountRepository->update($id, $dataToUpdate);
+            $this->accountRepositoryContract->update($id, $dataToUpdate);
 
             return ApiResponse::success([], 'Update successfully');
         } catch (\Exception $exception) {

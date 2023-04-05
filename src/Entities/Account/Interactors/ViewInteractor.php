@@ -2,21 +2,24 @@
 
 namespace Src\Entities\Account\Interactors;
 
-use Src\Entities\Account\Domains\Repositories\SalesforceAccountRepository;
+use Src\Entities\Account\Domains\Contracts\AccountRepositoryContract;
 use Src\Infrastructure\Laravel\Controller\Response\ControllerResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 
+/**
+ * Use case
+ */
 class ViewInteractor
 {
     public function __construct(
-        private readonly SalesforceAccountRepository $salesforceAccountRepository
+        private readonly AccountRepositoryContract $accountRepositoryContract
     ) {
     }
 
     public function __invoke($id)
     {
         try {
-            $record = $this->salesforceAccountRepository->findById($id);
+            $record = $this->accountRepositoryContract->findById($id);
 
             return ControllerResponse::format('account.view', ['record' => $record]);
         } catch (InvalidSessionIdException $exception) {

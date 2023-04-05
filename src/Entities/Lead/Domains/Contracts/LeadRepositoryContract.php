@@ -5,7 +5,9 @@ namespace Src\Entities\Lead\Domains\Contracts;
 use Illuminate\Support\Collection;
 use Src\Entities\Lead\Domains\Lead;
 
-//Port
+/**
+ * Lead repository port
+ */
 interface LeadRepositoryContract
 {
     public function findById($id): Lead;

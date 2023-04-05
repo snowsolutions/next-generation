@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Entities\Lead\Domains\Repositories;
+namespace Src\Integrations\Salesforce\Repositories\Lead;
 
 use Illuminate\Support\Collection;
 use Src\Entities\Lead\Domains\Contracts\LeadRepositoryContract;

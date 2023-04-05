@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Entities\Account\Domains\Repositories;
+namespace Src\Integrations\Salesforce\Repositories\Account;
 
 use Illuminate\Support\Collection;
 use Src\Entities\Account\Domains\Account;

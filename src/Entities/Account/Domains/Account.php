@@ -2,10 +2,12 @@
 
 namespace Src\Entities\Account\Domains;
 
-//DAO
 use Src\Entities\Account\Domains\ObjectValues\Name;
 use Src\Entities\Account\Domains\ObjectValues\Phone;
 
+/**
+ * Data access object
+ */
 class Account
 {
     public function __construct(
@@ -39,6 +41,9 @@ class Account
         return $this->phone;
     }
 
+    /**
+     * @return Account
+     */
     public static function create(
         Name $name,
         Phone $phone

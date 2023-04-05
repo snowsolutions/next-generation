@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Entities\Account\Domains\Repositories;
+namespace Src\Infrastructure\Laravel\Repositories\Account;
 
 use App\Models\Account as AccountEloquent;
 use Illuminate\Support\Collection;

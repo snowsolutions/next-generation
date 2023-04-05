@@ -5,7 +5,9 @@ namespace Src\Entities\Account\Domains\Contracts;
 use Illuminate\Support\Collection;
 use Src\Entities\Account\Domains\Account;
 
-//Port
+/**
+ * Account repository port
+ */
 interface AccountRepositoryContract
 {
     public function findById($id): Account;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Entities\Lead\Domains\Repositories;
+namespace Src\Infrastructure\Laravel\Repositories\Lead;
 
 use App\Models\Lead as LeadEloquent;
 use Illuminate\Support\Collection;

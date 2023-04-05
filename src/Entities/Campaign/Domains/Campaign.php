@@ -2,12 +2,13 @@
 
 namespace Src\Entities\Campaign\Domains;
 
-//DAO
-
 use Src\Entities\Campaign\Domains\ObjectValues\EndDate;
 use Src\Entities\Campaign\Domains\ObjectValues\Name;
 use Src\Entities\Campaign\Domains\ObjectValues\StartDate;
 
+/**
+ * Data access object
+ */
 class Campaign
 {
     public function __construct(

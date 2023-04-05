@@ -19,6 +19,15 @@ class RefreshTokenController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return $this->refreshAccessToken->__invoke($request);
+        /**
+         * Redirect back to previous URL
+         */
+        $redirectUrl = $request->get('prevUrl');
+        if (! $redirectUrl) {
+            $redirectUrl = '/';
+        }
+        $this->refreshAccessToken->__invoke();
+
+        return redirect()->to($redirectUrl);
     }
 }

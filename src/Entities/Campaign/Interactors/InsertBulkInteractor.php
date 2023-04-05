@@ -4,14 +4,17 @@ namespace Src\Entities\Campaign\Interactors;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Src\Entities\Campaign\Domains\Services\InsertBulkService;
+use Src\Entities\Campaign\Domains\Contracts\CampaignInsertBulkServiceContract;
 use Src\Infrastructure\Laravel\Controller\Response\ControllerResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 
+/**
+ * Use case
+ */
 class InsertBulkInteractor
 {
     public function __construct(
-        private readonly InsertBulkService $insertBulkService
+        private readonly CampaignInsertBulkServiceContract $insertBulkService
     ) {
     }
 

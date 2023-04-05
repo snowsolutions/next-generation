@@ -5,7 +5,9 @@ namespace Src\Entities\Campaign\Domains\Contracts;
 use Illuminate\Support\Collection;
 use Src\Entities\Campaign\Domains\Campaign;
 
-//Port
+/**
+ * Campaign repository port
+ */
 interface CampaignRepositoryContract
 {
     public function findById($id): Campaign;

@@ -4,6 +4,9 @@ namespace Src\Entities\Campaign\Interactors;
 
 use Src\Infrastructure\Laravel\Controller\Response\ControllerResponse;
 
+/**
+ * Use case
+ */
 class InsertBulkViewInteractor
 {
     public function __invoke()

@@ -194,6 +194,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        \Src\Infrastructure\Laravel\Providers\ApplicationConfigurationProvider::class,
+        \Src\Infrastructure\Laravel\Providers\PortAdapterBindingProvider::class,
 
     ],
 

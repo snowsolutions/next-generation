@@ -3,21 +3,24 @@
 namespace Src\Entities\Lead\Interactors;
 
 use Illuminate\Support\Facades\Session;
-use Src\Entities\Lead\Domains\Repositories\SalesforceLeadRepository;
+use Src\Entities\Lead\Domains\Contracts\LeadRepositoryContract;
 use Src\Infrastructure\Laravel\Controller\Response\ControllerResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 
+/**
+ * Use case
+ */
 class DeleteInteractor
 {
     public function __construct(
-        private readonly SalesforceLeadRepository $salesforceLeadRepository
+        private readonly LeadRepositoryContract $leadRepositoryContract
     ) {
     }
 
     public function __invoke($id)
     {
         try {
-            $this->salesforceLeadRepository->delete($id);
+            $this->leadRepositoryContract->delete($id);
             Session::flash('success', 'Delete successfully');
 
             return redirect()->route('lead.index');

@@ -2,13 +2,15 @@
 
 namespace Src\Entities\Lead\Domains;
 
-//DAO
 use Src\Entities\Lead\Domains\ObjectValues\Company;
 use Src\Entities\Lead\Domains\ObjectValues\Email;
 use Src\Entities\Lead\Domains\ObjectValues\FirstName;
 use Src\Entities\Lead\Domains\ObjectValues\LastName;
 use Src\Entities\Lead\Domains\ObjectValues\Phone;
 
+/**
+ * Data access object
+ */
 class Lead
 {
     public function __construct(
