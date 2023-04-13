@@ -18,7 +18,7 @@
 
             @foreach($records as $record)
                     <?php
-                    /** @var $record \Src\Entities\Lead\Domains\Lead */
+                    /** @var $record \Src\Application\Lead\Domains\Lead */
                     ?>
                 <tr class="record-row" data-id="{{$record->id()}}">
                     <td class="readonly record-field" data-field="FirstName" id="lead-{{$record->id()}}-FirstName">

@@ -5,7 +5,7 @@ namespace Src\Infrastructure\Laravel\Controllers\Campaign;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Src\Entities\Campaign\Interactors\InsertBulkInteractor;
+use Src\Application\Campaign\Interactors\InsertBulkInteractor;
 use Src\Infrastructure\Laravel\Controllers\Response\ControllerResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 

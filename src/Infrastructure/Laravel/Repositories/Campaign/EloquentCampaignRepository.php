@@ -1,16 +1,16 @@
 <?php
 
-namespace Src\Entities\Lead\Domains\Repositories;
+namespace Src\Application\Lead\Domains\Repositories;
 
 use App\Models\Lead as LeadEloquent;
 use Illuminate\Support\Collection;
-use Src\Entities\Lead\Domains\Contracts\LeadRepositoryContract;
-use Src\Entities\Lead\Domains\Lead;
-use Src\Entities\Lead\Domains\ObjectValues\Company;
-use Src\Entities\Lead\Domains\ObjectValues\Email;
-use Src\Entities\Lead\Domains\ObjectValues\FirstName;
-use Src\Entities\Lead\Domains\ObjectValues\LastName;
-use Src\Entities\Lead\Domains\ObjectValues\Phone;
+use Src\Application\Lead\Domains\Contracts\LeadRepositoryContract;
+use Src\Application\Lead\Domains\Lead;
+use Src\Application\Lead\Domains\ObjectValues\Company;
+use Src\Application\Lead\Domains\ObjectValues\Email;
+use Src\Application\Lead\Domains\ObjectValues\FirstName;
+use Src\Application\Lead\Domains\ObjectValues\LastName;
+use Src\Application\Lead\Domains\ObjectValues\Phone;
 
 class EloquentLeadRepository implements LeadRepositoryContract
 {

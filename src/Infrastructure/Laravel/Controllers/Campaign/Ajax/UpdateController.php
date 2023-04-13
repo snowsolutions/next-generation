@@ -4,7 +4,7 @@ namespace Src\Infrastructure\Laravel\Controllers\Campaign\Ajax;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Src\Entities\Campaign\Interactors\UpdateInteractor;
+use Src\Application\Campaign\Interactors\UpdateInteractor;
 use Src\Infrastructure\Laravel\Controllers\Response\ApiResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 

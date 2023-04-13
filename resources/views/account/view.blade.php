@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
     <?php
-    /** @var $record \Src\Entities\Account\Domains\Account */
+    /** @var $record \Src\Application\Account\Domains\Account */
     ?>
     <div class="container-head">
         <h1>Account: {{$record->name()->value()}}</h1>

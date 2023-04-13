@@ -20,7 +20,7 @@
 
             @foreach($records as $record)
                     <?php
-                    /** @var $record \Src\Entities\Campaign\Domains\Campaign */
+                    /** @var $record \Src\Application\Campaign\Domains\Campaign */
                     ?>
                 <tr class="record-row" data-id="{{$record->id()}}">
                     <td class="readonly record-field" data-field="Name" id="campaign-{{$record->id()}}-Name">

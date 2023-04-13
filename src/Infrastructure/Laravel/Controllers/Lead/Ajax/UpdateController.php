@@ -4,7 +4,7 @@ namespace Src\Infrastructure\Laravel\Controllers\Lead\Ajax;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Src\Entities\Lead\Interactors\UpdateInteractor;
+use Src\Application\Lead\Interactors\UpdateInteractor;
 use Src\Infrastructure\Laravel\Controllers\Response\ApiResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 

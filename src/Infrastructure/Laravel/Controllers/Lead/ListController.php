@@ -4,7 +4,7 @@ namespace Src\Infrastructure\Laravel\Controllers\Lead;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
-use Src\Entities\Lead\Interactors\GetListInteractor;
+use Src\Application\Lead\Interactors\GetListInteractor;
 use Src\Infrastructure\Laravel\Controllers\Response\ControllerResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 

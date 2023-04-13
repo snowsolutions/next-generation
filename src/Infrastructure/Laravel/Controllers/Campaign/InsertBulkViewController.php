@@ -4,7 +4,7 @@ namespace Src\Infrastructure\Laravel\Controllers\Campaign;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
-use Src\Entities\Campaign\Interactors\InsertBulkViewInteractor;
+use Src\Application\Campaign\Interactors\InsertBulkViewInteractor;
 use Src\Infrastructure\Laravel\Controllers\Response\ControllerResponse;
 
 class InsertBulkViewController extends Controller

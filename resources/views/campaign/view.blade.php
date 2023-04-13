@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
     <?php
-    /** @var $record \Src\Entities\Campaign\Domains\Campaign */
+    /** @var $record \Src\Application\Campaign\Domains\Campaign */
     ?>
     <div class="container-head">
         <h1>Campaign: {{$record->name()->value()}}</h1>

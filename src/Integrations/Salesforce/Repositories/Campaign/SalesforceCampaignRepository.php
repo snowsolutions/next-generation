@@ -3,11 +3,11 @@
 namespace Src\Integrations\Salesforce\Repositories\Campaign;
 
 use Illuminate\Support\Collection;
-use Src\Entities\Campaign\Domains\Campaign;
-use Src\Entities\Campaign\Domains\Contracts\CampaignRepositoryContract;
-use Src\Entities\Campaign\Domains\ObjectValues\EndDate;
-use Src\Entities\Campaign\Domains\ObjectValues\Name;
-use Src\Entities\Campaign\Domains\ObjectValues\StartDate;
+use Src\Application\Campaign\Domains\Campaign;
+use Src\Application\Campaign\Domains\Contracts\CampaignRepositoryContract;
+use Src\Application\Campaign\Domains\ObjectValues\EndDate;
+use Src\Application\Campaign\Domains\ObjectValues\Name;
+use Src\Application\Campaign\Domains\ObjectValues\StartDate;
 use Src\Integrations\Salesforce\Clients\Composite\CampaignCompositeClient;
 use Src\Integrations\Salesforce\Clients\SOQL\QueryClient;
 use Src\Integrations\Salesforce\Requests\Composite\CampaignCompositeRequest;

@@ -4,7 +4,7 @@ namespace Src\Infrastructure\Laravel\Controllers\Campaign;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
-use Src\Entities\Campaign\Interactors\DeleteInteractor;
+use Src\Application\Campaign\Interactors\DeleteInteractor;
 use Src\Infrastructure\Laravel\Controllers\Response\ControllerResponse;
 use Src\Integrations\Salesforce\Exceptions\InvalidSessionIdException;
 

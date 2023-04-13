@@ -3,10 +3,10 @@
 namespace Src\Integrations\Salesforce\Repositories\Account;
 
 use Illuminate\Support\Collection;
-use Src\Entities\Account\Domains\Account;
-use Src\Entities\Account\Domains\Contracts\AccountRepositoryContract;
-use Src\Entities\Account\Domains\ObjectValues\Name;
-use Src\Entities\Account\Domains\ObjectValues\Phone;
+use Src\Application\Account\Domains\Account;
+use Src\Application\Account\Domains\Contracts\AccountRepositoryContract;
+use Src\Application\Account\Domains\ObjectValues\Name;
+use Src\Application\Account\Domains\ObjectValues\Phone;
 use Src\Integrations\Salesforce\Clients\Composite\AccountCompositeClient;
 use Src\Integrations\Salesforce\Clients\SOQL\QueryClient;
 use Src\Integrations\Salesforce\Requests\Composite\AccountCompositeRequest;

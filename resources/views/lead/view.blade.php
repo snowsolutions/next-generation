@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
     <?php
-    /** @var $record \Src\Entities\Lead\Domains\Lead */
+    /** @var $record \Src\Application\Lead\Domains\Lead */
     ?>
     <div class="container-head">
         <h1>Lead: {{$record->firstName()->value() . ' ' . $record->lastName()->value()}}</h1>

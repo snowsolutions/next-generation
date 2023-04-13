@@ -4,7 +4,7 @@ namespace Src\Infrastructure\Laravel\Controllers\Account\Ajax;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Src\Entities\Account\Interactors\UpdateInteractor;
+use Src\Application\Account\Interactors\UpdateInteractor;
 use Src\Infrastructure\Laravel\Controllers\Response\ApiResponse;
 
 class UpdateController extends Controller

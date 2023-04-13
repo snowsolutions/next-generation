@@ -4,10 +4,10 @@ namespace Src\Infrastructure\Laravel\Repositories\Account;
 
 use App\Models\Account as AccountEloquent;
 use Illuminate\Support\Collection;
-use Src\Entities\Account\Domains\Account;
-use Src\Entities\Account\Domains\Contracts\AccountRepositoryContract;
-use Src\Entities\Account\Domains\ObjectValues\Name;
-use Src\Entities\Account\Domains\ObjectValues\Phone;
+use Src\Application\Account\Domains\Account;
+use Src\Application\Account\Domains\Contracts\AccountRepositoryContract;
+use Src\Application\Account\Domains\ObjectValues\Name;
+use Src\Application\Account\Domains\ObjectValues\Phone;
 
 class EloquentAccountRepository implements AccountRepositoryContract
 {

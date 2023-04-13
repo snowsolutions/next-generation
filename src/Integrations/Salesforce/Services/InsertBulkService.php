@@ -3,7 +3,7 @@
 namespace Src\Integrations\Salesforce\Services;
 
 use Illuminate\Http\Request;
-use Src\Entities\Campaign\Domains\Contracts\CampaignInsertBulkServiceContract;
+use Src\Application\Campaign\Domains\Contracts\CampaignInsertBulkServiceContract;
 use Src\Infrastructure\Laravel\Jobs\UploadCampaignBulkData;
 
 class InsertBulkService implements CampaignInsertBulkServiceContract
